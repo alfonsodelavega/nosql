@@ -2,7 +2,7 @@
 
 ## Instalación
 
-1. Seguid las instrucciones de instalación de Docker
+1. Seguid las [instrucciones de instalación de Docker](../instrucciones_docker/instrucciones_docker.md)
 
 2. Abrid una terminal: `cmd` en Windows
 
@@ -34,9 +34,13 @@
 
 Visual Studio Code es un editor de texto multiplataforma que además permite instalar extensiones que pueden llegar a convertirlo en un entorno de desarrollo completo. Entre otros, estas extensiones proporcionan soporte para distintos lenguajes de programación, para gestionar control de versiones, ejecutar/depurar programas, etcétera.
 
-1. Instalar Visual Studio Code en tu equipo: https://code.visualstudio.com/Download
+Utilizar Visual Studio Code facilitará el guardado de las consultas que ejecutes, al parecerse más el modo de trabajo a SQL Server Management Studio, por ejemplo.
 
-2. Instalar las siguientes extensiones:
+Seguid los siguientes pasos:
+
+1. Instalad Visual Studio Code en tu equipo: https://code.visualstudio.com/Download
+
+2. Instalad las siguientes extensiones:
 
    - [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)  y [SQLTools Cassandra](https://marketplace.visualstudio.com/items?itemName=JordanHury.sqltools-cassandra): permiten conectarnos al nodo de Cassandra iniciado en el contenedor Docker
    - [CQL](https://marketplace.visualstudio.com/items?itemName=LawrenceGrant.cql): Proporciona coloreado de sintaxis, plantillas de escritura, etc.
@@ -47,9 +51,50 @@ Para instalar las extensiones, podéis buscarlas directamente en el buscador del
 
    Si no os aparecen las extensiones, una segunda manera de instalarlas es mediante el comando proporcionado en los enlaces de las extensiones. Por ejemplo, para instalar SQL Tools, abrimos el menú rápido de Visual Studio Code (`Ctrl + P`) y escribimos `ext install mtxr.sqltools`
 
-3. Configurar la conexión a Cassandra en el menú SQL Tools:
+3. Configurad la conexión a Cassandra en el menú SQL Tools:
   ![configurar SQL tools](configurarSQLTools.png)
 
-4. Ejecutar consultas: seleccionamos la consulta y hacemos click derecho -> ejecutar (o mediante el atajo de teclado doble [Control + E] + [Control + E]). Debe estar la conexión a Cassandra del punto anterior establecida:
+4. Ejecutando consultas: seleccionamos la consulta y hacemos click derecho -> ejecutar (o mediante el atajo de teclado doble [Control + E] + [Control + E]). Debe estar la conexión a Cassandra del punto anterior establecida:
    ![ejecutar consultas](ejecutarConsulta.png)
 
+## Pruebas
+
+Os dejo aquí unos ejemplos de CQL para que probéis su ejecución (ejecutadlos uno a uno, en la terminal o en VS Code):
+
+```cql
+create keyspace instalacion
+with replication = {'class': 'SimpleStrategy', replication_factor' : 3};
+
+use instalacion;
+
+-- veremos por qué es buena idea definir esta primary key
+create table perro (
+     raza text,
+     identificador text,
+     nombre text,
+     primary key (raza, identificador)
+ );
+
+insert into perro (raza, identificador, nombre)
+values ('border collie', '1', 'trufa');
+
+insert into perro (raza, identificador, nombre)
+values ('border collie', '2', 'alfa');
+
+insert into perro (raza, identificador, nombre)
+values ('ratonero', '3', 'lindi');
+
+
+select * from perro where raza = 'border collie';
+
+-- OJO! esta consulta os mostrará un error
+select * from perro where nombre = 'lindi';
+
+-- Esta no. Veremos por qué en clase
+select * from perro
+where nombre = 'lindi'
+allow filtering;
+
+-- Esta también falla
+select * from perro where identificador = '2';
+```
