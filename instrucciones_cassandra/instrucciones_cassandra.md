@@ -63,7 +63,7 @@ Os dejo aquí unos ejemplos de CQL para que probéis su ejecución (ejecutadlos 
 
 ```cql
 create keyspace instalacion
-with replication = {'class': 'SimpleStrategy', replication_factor' : 3};
+with replication = {'class': 'SimpleStrategy', 'replication_factor' : 3};
 
 use instalacion;
 
