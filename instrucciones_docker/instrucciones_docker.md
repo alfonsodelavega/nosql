@@ -3,11 +3,12 @@
 ## Instalación
 
 1. Instalar el Docker Desktop adecuado para vuestro equipo: https://docs.docker.com/get-docker/
-2. En el caso de que utilicéis Linux, seguid las instrucciones de este enlace para que no sea necesario utilizar `sudo` para ejecutar los comandos `docker` siguientes: https://www.configserverfirewall.com/ubuntu-linux/add-user-to-docker-group-ubuntu/
-3. Para que el comando `docker` funcione en vuestra terminal, debéis tener la aplicación Docker Desktop ejecutándose.
-4. Para comprobar que la instalación se ha realizado correctamente, podéis crear un contenedor de prueba con el siguiente comando: `docker run hello-world`
+  - En el caso de Windows, debéis aceptar la instalación del *Windows Subsystem for Linux 2* (WSL 2) y el *Linux kernel update package*. Esto es necesario para el funcionamiento interno de Docker.
+  - En el caso de que utilicéis Linux, seguid las instrucciones de este enlace para que no sea necesario utilizar `sudo` para ejecutar los comandos `docker` siguientes: https://www.configserverfirewall.com/ubuntu-linux/add-user-to-docker-group-ubuntu/
+2. Para que el comando `docker` funcione en vuestra terminal, debéis tener la aplicación Docker Desktop ejecutándose.
+3. Para comprobar que la instalación se ha realizado correctamente, podéis crear un contenedor de prueba con el siguiente comando: `docker run hello-world`
 
-   El resultado debería ser el siguiente:
+El resultado debería ser el siguiente:
 
 ![](helloWorld.png)
 
@@ -43,7 +44,6 @@ Visual Studio Code es un editor de texto multiplataforma que además permite ins
 1. Instalar Visual Studio Code en tu equipo: https://code.visualstudio.com/Download
 2. Instalar la siguiente extensión: [Docker Extension for Visual Studio Code](https://code.visualstudio.com/docs/containers/overview)
 
-Ahora podremos visualizar las imágenes descargadas e iniciar y parar contenedores desde Visual Studio Code (De nuevo, Docker Desktop tiene que estar arrancado). En principio, esta extensión no permite descargar imágenes o crear nuevos contenedores, tareas que realizaremos mediante comandos directamente en la terminal o mediante Docker Desktop. 
+Ahora podremos visualizar las imágenes descargadas e iniciar y parar contenedores desde Visual Studio Code (De nuevo, Docker Desktop tiene que estar arrancado). En principio, esta extensión no permite descargar imágenes o crear nuevos contenedores, tareas que realizaremos mediante comandos directamente en la terminal.
 
 ![](dockerExtension.png)
-

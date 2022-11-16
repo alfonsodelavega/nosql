@@ -6,7 +6,7 @@
 
 2. Abrid una terminal: `cmd` en Windows
 
-4. Cread un contenedor `micassandra` mediante el siguiente comando, que descarga la imagen adecuada:
+3. Cread un contenedor `micassandra` mediante el siguiente comando, que descarga la imagen adecuada:
 
    `docker run -p 9042:9042 --name micassandra -d cassandra:4.0`
 
