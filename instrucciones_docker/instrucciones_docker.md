@@ -3,7 +3,9 @@
 ## Instalación
 
 1. Instalar el Docker Desktop adecuado para vuestro equipo: https://docs.docker.com/get-docker/
-  - En el caso de Windows, debéis aceptar la instalación del *Windows Subsystem for Linux 2* (WSL 2) y el *Linux kernel update package*. Esto es necesario para el funcionamiento interno de Docker.
+  - En el caso de Windows:
+    - Aseguraos de ejecutar el instalador de Docker Desktop con permisos de administrador.
+    - Debéis aceptar la instalación del *Windows Subsystem for Linux 2* (WSL 2) y el *Linux kernel update package*. Esto es necesario para el funcionamiento interno de Docker.
   - En el caso de que utilicéis Linux, seguid las instrucciones de este enlace para que no sea necesario utilizar `sudo` para ejecutar los comandos `docker` siguientes: https://www.configserverfirewall.com/ubuntu-linux/add-user-to-docker-group-ubuntu/
 2. Para que el comando `docker` funcione en vuestra terminal, debéis tener la aplicación Docker Desktop ejecutándose.
 3. Para comprobar que la instalación se ha realizado correctamente, podéis crear un contenedor de prueba con el siguiente comando: `docker run hello-world`
