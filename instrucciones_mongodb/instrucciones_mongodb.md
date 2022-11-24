@@ -6,13 +6,15 @@
 
 4. Cread un contenedor `mimongodb` mediante el siguiente comando, que automáticamente descarga la imagen adecuada:
 
-   `docker run -p 27017:27017 --name mimongodb -d mongo:5.0.4`
+   `docker run -p 27017:27017 --name mimongodb -d mongo:5.0`
 
-## Conexión desde Robo 3T (opción recomendada)
+## Conexión desde Studio 3T (opción recomendada)
 
-Robo 3T es una aplicación gráfica multiplataforma que nos permite conectarnos a nuestro servidor MongoDB
+Studio 3T es una aplicación gráfica multiplataforma que nos permite conectarnos a nuestro servidor MongoDB
 
-1. [Descarga de Robo 3T](https://robomongo.org/): Nos solicitan introducir unos datos, cualquiera sirve
+1. [Descarga de Studio 3T](https://studio3t.com/download-studio3t-free):
+    - Nos solicitan registrarnos con unos datos, cualquiera sirve.
+    - Seleccionad la vista "shell" al abrir nuevas conexiones
 
 2. Conexión a nuestro contenedor Docker:
 
@@ -30,11 +32,11 @@ Robo 3T es una aplicación gráfica multiplataforma que nos permite conectarnos 
 
    ![](ejecucionRobo3T.png)
 
-6. El contenido de nuestra shell puede ser guardado (y cargado posteriormente) a un fichero con extensión .js
+6. El contenido de nuestra shell puede ser guardado (y cargado posteriormente) a un fichero con extensión `.js`
 
 <div style="page-break-after: always; break-after: page;"></div>
 
-## Conexión desde Visual Studio Code
+## Conexión desde Visual Studio Code (Opcional)
 
 Si bien se puede utilizar esta opción, la herramienta Robo 3T es más cómoda, principalmente porque la manera de ejecutar consultas en VSCode es más laboriosa. No es necesario instalar esta opción si se utiliza Robo3T.
 
@@ -61,6 +63,10 @@ Visual Studio Code es un editor de texto multiplataforma que además permite ins
 
    ![](ejecucionVSCode.png)
 
-   
+
 
 <div style="page-break-after: always; break-after: page;"></div>
+
+## MongoDB Compass
+
+TBU
