@@ -62,11 +62,14 @@ Para instalar las extensiones, podéis buscarlas directamente en el buscador del
 Os dejo aquí unos ejemplos de CQL para que probéis su ejecución (ejecutadlos uno a uno, en la terminal o en VS Code):
 
 ```cql
+-- creación de keyspace (equivalente a esquema en el modelo relacional)
 create keyspace instalacion
-with replication = {'class': 'SimpleStrategy', 'replication_factor' : 3};
+with replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
 
+-- al igual que en sql, se necesita "usar" el keyspace para trabajar contra él
 use instalacion;
 
+-- creación de una tabla
 -- veremos por qué es buena idea definir esta primary key
 create table perro (
      raza text,
@@ -75,6 +78,7 @@ create table perro (
      primary key (raza, identificador)
  );
 
+-- inserciones
 insert into perro (raza, identificador, nombre)
 values ('border collie', '1', 'trufa');
 
@@ -85,15 +89,16 @@ insert into perro (raza, identificador, nombre)
 values ('ratonero', '3', 'lindi');
 
 
+-- consultas (nota: algunas devolverán error, está previsto y marcado)
+
+-- esta consulta funciona
 select * from perro where raza = 'border collie';
 
 -- OJO! esta consulta os mostrará un error
 select * from perro where nombre = 'lindi';
 
 -- Esta no. Veremos por qué en clase
-select * from perro
-where nombre = 'lindi'
-allow filtering;
+select * from perro where nombre = 'lindi' allow filtering;
 
 -- Esta también falla
 select * from perro where identificador = '2';
