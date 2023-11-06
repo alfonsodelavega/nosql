@@ -26,7 +26,9 @@
 
 1. Abrir una shell de CQL en modo interactivo en el contenedor `micassandra`:
 
-       `docker exec -it  micassandra cqlsh`
+```
+docker exec -it  micassandra cqlsh
+```
 
 2. El comando anterior debería cambiarnos el prompt de la terminal a `cqlsh>`, permitiéndonos ejecutar comandos CQL sobre el contenedor.
 
@@ -52,14 +54,16 @@ Para instalar las extensiones, podéis buscarlas directamente en el buscador del
    Si no os aparecen las extensiones, una segunda manera de instalarlas es mediante el comando proporcionado en los enlaces de las extensiones. Por ejemplo, para instalar SQL Tools, abrimos el menú rápido de Visual Studio Code (`Ctrl + P`) y escribimos `ext install mtxr.sqltools`
 
 3. Configurad la conexión a Cassandra en el menú SQL Tools:
+
   ![configurar SQL tools](configurarSQLTools.png)
 
-4. Ejecutando consultas: seleccionamos la consulta y hacemos click derecho -> ejecutar (o mediante el atajo de teclado doble [Control + E] + [Control + E]). Debe estar la conexión a Cassandra del punto anterior establecida:
+4. Ejecutando consultas: seleccionamos la consulta y hacemos click derecho -> ejecutar (o mediante el atajo de teclado doble [Control + E] + [Control + E], que se puede hacer simplemente manteniendo pulsado Control y pulsando dos veces a la E). Debe estar la conexión a Cassandra del punto anterior establecida:
+
    ![ejecutar consultas](ejecutarConsulta.png)
 
 ## Pruebas
 
-Os dejo aquí unos ejemplos de CQL para que probéis su ejecución (ejecutadlos uno a uno, en la terminal o en VS Code):
+Os dejo aquí unos ejemplos de CQL para que probéis su ejecución. Ejecutadlos uno a uno, en la terminal o en VS Code (copiadlos a un fichero con extensión CQL):
 
 ```cql
 -- creación de keyspace (equivalente a esquema en el modelo relacional)
