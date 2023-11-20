@@ -28,6 +28,7 @@ docker exec mimongodb mongoimport -d analyticsdb -c transactions --file /tmp/tra
 
 ## Posibles consultas a realizar y optimizar
 
-- Cuentas con un límite menor a 10,000
-- Transacciones con un precio total mayor de 50,000
-- Transacciones en octubre de 2016
+- Datos de cuentas con un límite menor a 10,000
+- Datos de cuentas con productos de tipo `"Commodity"`
+- Datos de clientes nacidos antes de 1991
+- Ids de cuentas que vendieron acciones de ebay
