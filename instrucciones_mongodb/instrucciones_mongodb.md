@@ -2,9 +2,9 @@
 
 1. Seguid las [instrucciones de instalación de Docker](../instrucciones_docker/instrucciones_docker.md)
 
-1. Abrid una terminal: `cmd` en Windows
+2. Abrid una terminal: `cmd` en Windows
 
-4. Cread un contenedor `mimongodb` mediante el siguiente comando, que automáticamente descarga la imagen adecuada:
+3. Cread un contenedor `mimongodb` mediante el siguiente comando, que automáticamente descarga la imagen adecuada:
 
    `docker run -p 27017:27017 --name mimongodb -d mongo:5.0`
 
@@ -67,6 +67,6 @@ Visual Studio Code es un editor de texto multiplataforma que además permite ins
 
 <div style="page-break-after: always; break-after: page;"></div>
 
-## MongoDB Compass
+## Probando la instalación
 
-TBU
+[Estas instrucciones](import_analytics_db.md) explican cómo descargar e importar una base de datos en tu nuevo contenedor de MongoDB.
